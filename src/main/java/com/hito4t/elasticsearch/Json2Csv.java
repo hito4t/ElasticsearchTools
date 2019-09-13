@@ -28,7 +28,7 @@ public class Json2Csv {
 
 	/**
 	 *
-	 * @param args [-i &lt;input file&gt;] [-o &lt;output file&gt;]
+	 * @param args [-i &lt;input file (json)&gt;] [-o &lt;output file (csv)&gt;]
 	 * If -i option is omitted, input from standard input.
 	 * If -o option is omitted, output to standard output.
 	 * @throws Exception
