@@ -18,8 +18,21 @@ import com.google.gson.JsonParseException;
 import com.google.gson.stream.JsonReader;
 
 
+
+/**
+ * This class will convert json returned as Elasticsearch query result to csv.
+ *
+ * @author Hitoshi Tanaka
+ */
 public class Json2Csv {
 
+	/**
+	 *
+	 * @param args [-i &lt;input file&gt;] [-o &lt;output file&gt;]
+	 * If -i option is omitted, input from standard input.
+	 * If -o option is omitted, output to standard output.
+	 * @throws Exception
+	 */
 	public static void main(String[] args) throws Exception {
 		InputStream in = System.in;
 		OutputStream out = System.out;
@@ -70,12 +83,10 @@ public class Json2Csv {
 
 				if (property != null && property.equals("hits.hits._source")) {
 			    	if (first) {
-			    		//System.out.println(join(object.keySet()));
 						writer.write(join(object.keySet()));
 						writer.newLine();
 			    		first = false;
 			    	}
-					//System.out.println(join(object.values()));
 
 					writer.write(join(object.values()));
 					writer.newLine();
